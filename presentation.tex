@@ -1,0 +1,95 @@
+\documentclass{beamer}
+
+\usepackage[francais]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{beamerthemecs}
+\usepackage{beamerouterthemecs}
+\usepackage{beamerfontthemecs}
+\usepackage{beamerinnerthemecs}
+\usepackage{beamercolorthemecs}
+
+\usetheme{cs}
+\useoutertheme{cs}
+\usefonttheme{cs}
+\useinnertheme{cs}
+\usecolortheme{cs}
+
+\title{Sécurité dans les domaines MS Windows : Les GPO}
+\author{\textbf{Thibault \textsc{Lengagne} et Valentin \textsc{Jaouen}}}
+\institute{Centrale Supélec - Campus de Rennes}
+
+\begin{document}
+
+  \begin{frame}
+    \titlepage
+  \end{frame}
+  
+  \AtBeginSection[] {
+    \begin{frame}
+      \frametitle{Plan}
+      \tableofcontents[currentsection, hideothersubsections, pausesubsections]
+    \end{frame} 
+  }
+
+  \section{Introduction}
+  \begin{frame}
+    \begin{itemize}
+     \item 
+    \end{itemize}
+  \end{frame}
+  
+  \section{Active Directory}
+  \begin{frame}
+    \frametitle{Historique}
+    \begin{itemize}
+     \item \textit{Network Directory Services} (NTDS) à l'origine
+     \item Présenté en 1996 pour la première fois
+     \item Première utilisation en 1999 dans \textit{Windows 2000 Server Edition}
+     \item Amélioré constamment depuis
+     \item Résulte d'une évolution de la BDD de comptes de domaine \textit{Security Account Manager} (SAM) et une mise en oeuvre de LDAP
+     \item \textit{Active Directory} est donc un annuaire LDAP
+    \end{itemize}
+  \end{frame}
+  
+  \begin{frame}
+    \frametitle{Objectifs}
+    \begin{block}{Objectif principal}
+     Fournir des services centralisés d'identification et d'authentification à un réseau d'ordinateurs utilisant le système Windows.
+    \end{block}
+    \begin{block}{Objectifs secondaires}
+     \begin{itemize}
+      \item Attribution et application de stratégies
+      \item Distribution de logiciels
+      \item Installation de mises à jour critiques par les administrateurs
+     \end{itemize}
+    \end{block}
+  \end{frame}
+  
+  \begin{frame}
+    \frametitle{Structure Active Directory}
+    \begin{block}{Active Directory}
+      Service d'annuaire utilisé pour stocker des informations relatives aux ressources réseau sur un domaine.
+    \end{block}    
+    \begin{block}{Structure Active Directory}
+      Organisation hiérarchisée d'objets classé en trois catégories :
+      \begin{itemize}
+       \item les ressources : imprimantes, routeur, ...
+       \item les services : courrier électronique, intranet, ...
+       \item les utilisateurs : comptes utilisateurs et groupes
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \section{Stratégie de groupe}
+  
+  
+  \section{Conclusion}
+  
+  \begin{frame}
+    \begin{center}
+      Merci de votre attention
+    \end{center}
+  \end{frame}
+
+\end{document}
