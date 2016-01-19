@@ -34,19 +34,52 @@
 
   \section{Introduction}
   \begin{frame}
+   \frametitle{Windows Server}
+   \textit{Windows Server} est la dénomination regroupant les systèmes d'exploitation orientés serveur de Microsoft :
+   \begin{itemize}
+    \item Windows NT
+    \item Windows 2000 Server
+    \item Windows Server 2003
+    \item Windows Server 2008
+    \item Windows Server 2008 R2
+    \item Windows Server 2012 
+    \item Windows Server 2012 R2
+    \item Windows Server 2016
+   \end{itemize}
+  \end{frame}
+  
+  \begin{frame}
+   \frametitle{Fonctions principales}
+   Depuis \textit{Windows 2000 Server} sont apparut les fonctionnalités suivantes :
+   \begin{itemize}
+    \item Active Directory, un annuaire d'organisation et de gestion des objets réseaux
+    \item Un serveur web \textit{Internet Information Services} (IIS) intégré
+    \item Terminal Server, un service permettant d'ouvrir une session à distance
+    \item La prise en charge d'une grande quantité de RAM et de processeurs multiples
+    \item La prise en charge de nombreux protocoles
+    \item La gestion centralisée de clients multiples
+    \item Une interface de gestion réseau
+   \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+     \frametitle{Stratégie}
     \begin{itemize}
-     \item 
+     \item Désigne la configuration logicielle du système par rapport aux utilisateurs
+     \item Par défaut suite à une installation de \textit{Windows} : aucun stratégie n'est configurée
     \end{itemize}
+    \begin{alertblock}{Conséquence dangereuse}
+     Tout est permis en fonction des droits des groupes d'utilisateurs prédéfinis (administrateurs, utilisateurs, utilisateurs avec pouvoir, ...).
+    \end{alertblock}
   \end{frame}
   
   \section{Active Directory}
-  \subsection{Présentation}
   \begin{frame}
     \frametitle{Historique}
     \begin{itemize}
      \item \textit{Network Directory Services} (NTDS) à l'origine
      \item Présenté en 1996 pour la première fois
-     \item Première utilisation en 1999 dans \textit{Windows 2000 Server Edition}
+     \item Première utilisation en 1999 dans \textit{Windows 2000 Server}
      \item Amélioré constamment depuis
      \item Résulte d'une évolution de la BDD de comptes de domaine \textit{Security Account Manager} (SAM) et une mise en oeuvre de LDAP
      \item \textit{Active Directory} est donc un annuaire LDAP
@@ -67,26 +100,102 @@
     \end{block}
   \end{frame}
   
-  \subsection{Structure}
   \begin{frame}
-    \frametitle{Objets}
-    
-  \end{frame}
-  
-  \begin{frame}
-    \frametitle{Unités organisationelles}
-    
-  \end{frame}
-  
-  \begin{frame}
-    \frametitle{Forêts, arborescences et domaines}
+    \frametitle{Structure Active Directory}
+    \begin{block}{Active Directory}
+      Service d'annuaire utilisé pour stocker des informations relatives aux ressources réseau sur un domaine.
+    \end{block}    
+    \begin{block}{Structure Active Directory}
+      Organisation hiérarchisée d'objets classé en trois catégories :
+      \begin{itemize}
+       \item les ressources : imprimantes, routeur, ...
+       \item les services : courrier électronique, intranet, ...
+       \item les utilisateurs : comptes utilisateurs et groupes
+      \end{itemize}
+    \end{block}
   \end{frame}
 
-  
   \section{Stratégie de groupe}
+  \begin{frame}
+    \frametitle{Présentation}
+    \begin{itemize}
+     \item Permet de configurer des restrictions d'utilisation de \textit{Windows} 
+     \item Permet de configurer des paramètres à appliquer soit sur un ordinateur donné, soit sur un compte utilisateur donné
+     % plus précis concernant les comptes utilisateurs
+    \end{itemize}
+    D'où la possibilité d'agir sur :
+    \begin{itemize}
+     \item La définition d'un environnement
+     \item Le déploiement de logiciels
+     \item L'application des paramètres de sécurité
+    \end{itemize}
+  \end{frame}
   
-  \section{Group Policy Objects}  
+  \begin{frame}
+   \frametitle{Exemple de stratégie de groupe}
+   \begin{itemize}
+    \item Menu démarrer et Barre des tâches
+    \begin{enumerate}
+     \item Suppression du menu Documents dans le menu Démarrer
+     \item Suppression des Connexions réseau et accès distant du menu Démarrer
+     \item Suppression du menu Exécuter dans le menu Démarrer
+     \item Désactivation de la fermeture de session dans le menu Démarrer
+     \item Désactivation de la commande Arrêter
+    \end{enumerate}
+    \item Panneau de configuration
+    \begin{enumerate}
+     \item Désactivation du Panneau de configuration 
+     \item Masque de certaines applications du Panneau de configuration
+    \end{enumerate}
+    \item Système
+    \begin{enumerate}
+     \item Activation des quotas de disque
+     \item Désactivation des outils de modifications du Registre
+     \item Désactivation de l'invite de commandes
+    \end{enumerate}
+    \item Internet Explorer
+    \begin{enumerate}
+     \item Désactivation de la modification des paramètres de la page de démarrage
+    \end{enumerate}
+   \end{itemize}
+  \end{frame}  
   
+  \section{Mise en oeuvre des stratégies de groupe : les GPOs}
+  
+  \begin{frame}
+   \frametitle{Présentation}
+   \begin{itemize}
+    \item GPO signifie \textit{Group Policy Object}
+    \item Apparus avec \textit{Windows 2000 Server} avec l'\textit{Active Directory}
+    \item Un GPO est un objet \textit{Active Directory}
+    \item Il contient un ensemble de paramètres applicables à un utilisateur ou à un ordinateur
+   \end{itemize}
+   %ajout d'une entrée concernant sysvol
+  \end{frame}
+
+  \begin{frame}
+   \frametitle{Avantages des GPO}
+   \begin{itemize}
+    \item Configurent de manière automatisée et centralisée les postes de travail et les serveurs \textit{Windows} d'un environnement donnée
+    \item La configuration des postes n'est plus stockée localement grâce au dossier SYSVOL
+    \begin{itemize}
+     \item Il suffit d'appliquer un GPO existant à un nouveau poste et la configuration s'applique
+    \end{itemize}
+    \item La suppression d'une GPO restaure les paramètres locaux appliqués avant les GPOs
+    \item Il est théoriquement possible de configurer n'importe quel paramètre par GPO
+    \item Configuration des postes uniforme
+    \item Les GPO sont réappliquées à intervalle régulier
+   \end{itemize}
+  \end{frame}
+  
+  \begin{frame}
+   \frametitle{Limites des GPO}
+   \begin{itemize}
+    \item 
+   \end{itemize}
+  \end{frame}
+
+
   \section{Conclusion}
   
   \begin{frame}
