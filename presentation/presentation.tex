@@ -106,11 +106,17 @@
       Service d'annuaire utilisé pour stocker des informations relatives aux ressources réseau sur un domaine.
     \end{block}    
     \begin{block}{Structure Active Directory}
-      Organisation hiérarchisée d'objets classé en trois catégories :
+      Organisation hiérarchisée d'objets classés en trois catégories :
       \begin{itemize}
-       \item les ressources : imprimantes, routeur, ...
+       \item les ressources : imprimantes, ordinateurs ...
        \item les services : courrier électronique, intranet, ...
        \item les utilisateurs : comptes utilisateurs et groupes
+      \end{itemize}
+      Ces objets peuvent être regroupés en :
+      \begin{itemize}
+       \item unités d'organisation permettant l'application des GPO
+       \item groupes universels, globaux ou locaux
+       \item arbres et forêts
       \end{itemize}
     \end{block}
   \end{frame}
@@ -169,24 +175,20 @@
     \item Apparus avec \textit{Windows 2000 Server} avec l'\textit{Active Directory}
     \item Un GPO est un objet \textit{Active Directory}
     \item Il contient un ensemble de paramètres applicables à un utilisateur ou à un ordinateur
-    \item Les GPOs sont stockées et répliquées dans le dossier SYSVOL
+    \item Les GPOs sont accessibles dans tous le domaine, dans le dossier SYSVOL
    \end{itemize}
    \begin{block}{SYSVOL ?}
-    Dossier partagé entre les contrôleurs de domaine et avec les clients du domaine.
+    Dossier partagé sur un volume NTFS entre les contrôleurs de domaine et avec les clients du domaine.
    \end{block}
-
   \end{frame}
 
   \begin{frame}
    \frametitle{Avantages des GPO}
    \begin{itemize}
-    \item Configurent de manière automatisée et centralisée les postes de travail et les serveurs \textit{Windows} d'un environnement donnée
-    \item La configuration des postes n'est plus stockée localement grâce au dossier SYSVOL
-    \begin{itemize}
-     \item Il suffit d'appliquer un GPO existant à un nouveau poste et la configuration s'applique
-    \end{itemize}
-    \item La suppression d'une GPO restaure les paramètres locaux appliqués avant les GPOs
-    \item Il est théoriquement possible de configurer n'importe quel paramètre par GPO
+    \item Configurent de manière automatisée et centralisée les postes de travail et les serveurs \textit{Windows} d'un environnement donné
+    \item La configuration des postes n'est pa stockée localement. Il suffit d'ajouter un poste un GPO existant et la configuration s'applique
+    \item La suppression d'une GPO restaure les paramètres locaux
+    \item Il est presque possible de configurer n'importe quel paramètre par GPO
     \item Configuration des postes uniforme
     \item Les GPO sont réappliquées à intervalle régulier
    \end{itemize}
