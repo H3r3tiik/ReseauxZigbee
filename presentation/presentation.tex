@@ -15,7 +15,7 @@
 \useinnertheme{cs}
 \usecolortheme{cs}
 
-\title{Les Réseaux Zigbee}
+\title[Les Réseaux Zigbee]{Les Réseaux Zigbee}
 \author{\textbf{Thibault \textsc{Lengagne}, Sofian \textsc{Medbouhi} et Staninslas \textsc{Fechner}}}
 \institute{Centrale Supélec - Campus de Rennes}
 
@@ -32,94 +32,164 @@
     \end{frame} 
   }
 
-  \section{Introduction}
+ \section{Introduction}
   \begin{frame}
    \frametitle{Réseaux Zigbee}
-   \textit{Windows Server} est la dénomination regroupant les systèmes d'exploitation orientés serveur de Microsoft :
    \begin{itemize}
-    \item Windows NT
-    \item Windows 2000 Server
-    \item Windows Server 2003
-    \item Windows Server 2008
+    \item Histoire breve
+    \item Intérêt, application (domotique)
+    \item Droit, license, implémentation
+    \item Avenir
 
    \end{itemize}
   \end{frame}
   
   \begin{frame}
    \frametitle{Fonctions principales}
-   Depuis \textit{Windows 2000 Server} sont apparut les fonctionnalités suivantes :
+   Depuis \textit{Zigbee}
    \begin{itemize}
-    \item Active Directory, un annuaire d'organisation et de gestion des objets réseaux
-    \item Un serveur web \textit{Internet Information Services} (IIS) intégré
-    \item Terminal Server, un service permettant d'ouvrir une session à distance
-    \item La prise en charge d'une grande quantité de RAM et de processeurs multiples
-    \item La prise en charge de nombreux protocoles
-    \item La gestion centralisée de clients multiples
-    \item Une interface de gestion réseau
+    \item 
+    \item 
+    \item 
+    \item 
    \end{itemize}
   \end{frame}
 
   \begin{frame}
      \frametitle{Stratégie}
     \begin{itemize}
-     \item Désigne la configuration logicielle du système par rapport aux utilisateurs
-     \item Par défaut suite à une installation de \textit{Windows} : aucun stratégie n'est configurée
+     \item 
+     \item 
     \end{itemize}
-    \begin{alertblock}{Conséquence dangereuse}
-     Tout est permis en fonction des droits des groupes d'utilisateurs prédéfinis (administrateurs, utilisateurs, utilisateurs avec pouvoir, ...).
+    \begin{alertblock}{Example}
+      Example
     \end{alertblock}
   \end{frame}
   
-  \section{La norme 802.14.5}
+ \section{La norme IEEE 802.15.4}
   \begin{frame}
-    \frametitle{Historique}
+    \frametitle{Zigbee et la norme 802.15.4}
+    Le protocole Zigbee utilise ce protocole comme cadre de fonctionnement :
+     %TO DO : Mettre imag   
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Détails}
+    Protocole de communication de la famille des LR WPAN
     \begin{itemize}
-     \item \textit{Network Directory Services} (NTDS) à l'origine
-     \item Présenté en 1996 pour la première fois
-     \item Première utilisation en 1999 dans \textit{Windows 2000 Server}
-     \item Amélioré constamment depuis
-     \item Résulte d'une évolution de la BDD de comptes de domaine \textit{Security Account Manager} (SAM) et une mise en oeuvre de LDAP
-     \item \textit{Active Directory} est donc un annuaire LDAP
+      \item Faible consommation
+      \item Faible portée
+      \item Faible débit
     \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Comparatif}
+    \begin{block}{Schema comparatif des différents protocole sans fil}
+    %TO DO METTRE IMAGE
+    \end{block}
   \end{frame}
   
   \begin{frame}
-    \frametitle{Objectifs}
-    \begin{block}{Objectif principal}
-     Fournir des services centralisés d'identification et d'authentification à un réseau d'ordinateurs utilisant le système Windows.
+    \frametitle{La couche physique}
+    Contient l'émetteur/récepteur radio, avec un mécanisme de contrôle de qualité du signal et CCA
+    \begin{block}{Débit}
+     %TO DO METTRE IMAGE
     \end{block}
-    \begin{block}{Objectifs secondaires}
-     \begin{itemize}
-      \item Attribution et application de stratégies
-      \item Distribution de logiciels
-      \item Installation de mises à jour critiques par les administrateurs
-     \end{itemize}
+  \end{frame}
+  
+  \begin{frame}
+    \frametitle{La couche d'accès au medium (MAC)}
+    \begin{block}{Rôle des éléments du réseau}
+      \begin{itemize}
+        \item Le coordinateur (ZC) est le noeud principal, il est unique
+        \item Les FFD ou routeurs gèrent le routage et les terminaux
+        \item Les RFD ou terminaux sont de simple capteurs aux extremités du réseau
+      \end{itemize}
     \end{block}
+  \end{frame}
+  
+  \begin{frame}
+    \frametitle{La couche d'accès au medium (MAC)}
+    \begin{block}{Format de trame}
+      \begin{itemize}
+        \item En-tête (contrôle de trame, numéro de séquence, adressage)
+        \item Données
+        \item Pied (CRC)
+        %TO DO METTRE IMAGE
+      \end{itemize}
+    \end{block}
+    \begin{block}{Il existe deux modes de fonctionnement}
+      \begin{itemize}
+        \item Le mode non-coordonnée
+        \item Le mode coordonnée, ou balisé
+      \end{itemize}
+    \end{block}
+  \end{frame}
+  
+  \begin{frame}
+    \frametitle{La couche d'accès au medium (MAC)}
+    \begin{block}{Le mode non-coordonnée}
+      \begin{itemize}
+        \item Pas d'emission de \textit{beacon}
+        \item Fonctionnement CSMA/CA pour gérer les collisions
+        \item Le coordinateur est éveillé en permanence
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{La sous-couche d'accès au medium (MAC)}
+    \begin{block}{Le mode coordonnée}
+      Le coordinateur diffuse périodiquement des \textit{beacon}. Tous les dispositifs sont informés de :
+      \begin{itemize}
+        \item La durée de la \textit{superframe} et quand ils peuvent transmettre des données en CSMA/CA
+        \item A partir de quel moment le coordinateur rentre en hibernation et pour quelle durée
+        %TO DO METTRE IMAGE
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{La sous-couche de convergence (LLC)}
+    \begin{itemize}
+      \item Vérification de l'intégrité des données reçues
+      \item Contrôle de flux, afin d'éviter la saturation
+      \item La convergence d'adressage (correspondance co uche 2 et 3 du modèle OSI, gestion du boradcast et en multicast)
+    \end{itemize}
   \end{frame}
 
   \section{Les couches 4 à 7}
   \begin{frame}
     \frametitle{Présentation}
     \begin{itemize}
-     \item Permet de configurer des restrictions d'utilisation de \textit{Windows} 
-     \item Permet de configurer des paramètres à appliquer soit sur un ordinateur donné, soit sur un compte utilisateur donné
-     % plus précis concernant les comptes utilisateurs
+      \item 
+      \item 
     \end{itemize}
-    D'où la possibilité d'agir sur :
+    Example : 
     \begin{itemize}
-     \item La définition d'un environnement
-     \item Le déploiement de logiciels
-     \item L'application des paramètres de sécurité
+      \item 
+      \item 
     \end{itemize}
   \end{frame}
 
-
+  \begin{frame}
+    \frametitle{Adressage}
+    \begin{itemize}
+      \item Zigbee propose un algorithme de distribution d'adresses atomatique et décentralisé
+      \item 
+    \end{itemize}
+    Example : 
+    \begin{itemize}
+      \item 
+      \item 
+    \end{itemize}
+  \end{frame}
 
   \section{Conclusion}
-  
   \begin{frame}
     \begin{center}
-      Merci de votre attention
+      Merci de votre attention !
     \end{center}
   \end{frame}
 
