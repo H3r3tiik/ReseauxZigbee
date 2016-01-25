@@ -15,8 +15,8 @@
 \useinnertheme{cs}
 \usecolortheme{cs}
 
-\title{Sécurité dans les domaines MS Windows : Les GPO}
-\author{\textbf{Thibault \textsc{Lengagne} et Valentin \textsc{Jaouen}}}
+\title{Les Réseaux Zigbee}
+\author{\textbf{Thibault \textsc{Lengagne} et Sofian \textsc{Medbouhi} et Staninslas \textsc{Fechner}}}
 \institute{Centrale Supélec - Campus de Rennes}
 
 \begin{document}
@@ -34,17 +34,14 @@
 
   \section{Introduction}
   \begin{frame}
-   \frametitle{Windows Server}
+   \frametitle{Réseaux Zigbee}
    \textit{Windows Server} est la dénomination regroupant les systèmes d'exploitation orientés serveur de Microsoft :
    \begin{itemize}
     \item Windows NT
     \item Windows 2000 Server
     \item Windows Server 2003
     \item Windows Server 2008
-    \item Windows Server 2008 R2
-    \item Windows Server 2012 
-    \item Windows Server 2012 R2
-    \item Windows Server 2016
+
    \end{itemize}
   \end{frame}
   
@@ -73,7 +70,7 @@
     \end{alertblock}
   \end{frame}
   
-  \section{Active Directory}
+  \section{La norme 802.14.5}
   \begin{frame}
     \frametitle{Historique}
     \begin{itemize}
@@ -99,29 +96,8 @@
      \end{itemize}
     \end{block}
   \end{frame}
-  
-  \begin{frame}
-    \frametitle{Structure Active Directory}
-    \begin{block}{Active Directory}
-      Service d'annuaire utilisé pour stocker des informations relatives aux ressources réseau sur un domaine.
-    \end{block}    
-    \begin{block}{Structure Active Directory}
-      Organisation hiérarchisée d'objets classés en trois catégories :
-      \begin{itemize}
-       \item les ressources : imprimantes, ordinateurs ...
-       \item les services : courrier électronique, intranet, ...
-       \item les utilisateurs : comptes utilisateurs et groupes
-      \end{itemize}
-      Ces objets peuvent être regroupés en :
-      \begin{itemize}
-       \item unités d'organisation permettant l'application des GPO
-       \item groupes universels, globaux ou locaux
-       \item arbres et forêts
-      \end{itemize}
-    \end{block}
-  \end{frame}
 
-  \section{Stratégie de groupe}
+  \section{Les couches 4 à 7}
   \begin{frame}
     \frametitle{Présentation}
     \begin{itemize}
@@ -136,79 +112,7 @@
      \item L'application des paramètres de sécurité
     \end{itemize}
   \end{frame}
-  
-  \begin{frame}
-   \frametitle{Exemple de stratégie de groupe}
-   \begin{itemize}
-    \item Menu démarrer et Barre des tâches
-    \begin{enumerate}
-     \item Suppression du menu Documents dans le menu Démarrer
-     \item Suppression des Connexions réseau et accès distant du menu Démarrer
-     \item Suppression du menu Exécuter dans le menu Démarrer
-     \item Désactivation de la fermeture de session dans le menu Démarrer
-     \item Désactivation de la commande Arrêter
-    \end{enumerate}
-    \item Panneau de configuration
-    \begin{enumerate}
-     \item Désactivation du Panneau de configuration 
-     \item Masque de certaines applications du Panneau de configuration
-    \end{enumerate}
-    \item Système
-    \begin{enumerate}
-     \item Activation des quotas de disque
-     \item Désactivation des outils de modifications du Registre
-     \item Désactivation de l'invite de commandes
-    \end{enumerate}
-    \item Internet Explorer
-    \begin{enumerate}
-     \item Désactivation de la modification des paramètres de la page de démarrage
-    \end{enumerate}
-   \end{itemize}
-  \end{frame}  
-  
-  \section{Mise en oeuvre des stratégies de groupe : les GPOs}
-  
-  \begin{frame}
-   \frametitle{Présentation}
-   \begin{itemize}
-    \item GPO signifie \textit{Group Policy Object}
-    \item Apparus avec \textit{Windows 2000 Server} avec l'\textit{Active Directory}
-    \item Un GPO est un objet \textit{Active Directory}
-    \item Il contient un ensemble de paramètres applicables à un utilisateur ou à un ordinateur
-    \item Les GPOs sont stockées et répliquées dans le dossier SYSVOL
-   \end{itemize}
-   \begin{block}{SYSVOL ?}
-    Dossier partagé entre les contrôleurs de domaine et avec les clients du domaine.
-   \end{block}
 
-  \end{frame}
-
-  \begin{frame}
-   \frametitle{Avantages des GPO}
-   \begin{itemize}
-    \item Configurent de manière automatisée et centralisée les postes de travail et les serveurs \textit{Windows} d'un environnement donné
-    \item La configuration des postes n'est plus stockée localement grâce au dossier SYSVOL
-    \begin{itemize}
-     \item Il suffit d'appliquer un GPO existant à un nouveau poste et la configuration s'applique
-    \end{itemize}
-    \item La suppression d'une GPO restaure les paramètres locaux appliqués avant les GPOs
-    \item Il est théoriquement possible de configurer n'importe quel paramètre par GPO
-    \item Configuration des postes uniforme
-    \item Les GPO sont réappliquées à intervalle régulier
-   \end{itemize}
-  \end{frame}
-  
-  \begin{frame}
-   \frametitle{Limites des GPO}
-   \begin{itemize}
-    \item La gestion des GPOs n'est pas chose aisée
-    \begin{itemize}
-      \item Il faut être sûr d'appliquer le ou les bons GPOs aux bons ordinateurs et/ou utilisateurs
-      \item Beaucoup d'administrateurs sont confrontés à ce problème lorsqu'ils mettent en oeuvre les GPOs
-    \end{itemize}
-    \item Si chaque poste ou chaque utilisateur du réseau nécessite une configuration particulière, les GPOs ne sont plus vraiment efficaces
-   \end{itemize}
-  \end{frame}
 
 
   \section{Conclusion}
