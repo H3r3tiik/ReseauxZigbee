@@ -70,7 +70,9 @@
   \begin{frame}
     \frametitle{Zigbee et la norme 802.15.4}
     Le protocole Zigbee utilise ce protocole comme cadre de fonctionnement :
-     %TO DO : Mettre imag   
+      \begin{center}
+       \includegraphics[scale=0.4]{OSI-Zigbee.png}
+      \end{center}  
   \end{frame}
 
   \begin{frame}
@@ -86,7 +88,9 @@
   \begin{frame}
     \frametitle{Comparatif}
     \begin{block}{Schema comparatif des différents protocole sans fil}
-    %TO DO METTRE IMAGE
+      \begin{center}
+       \includegraphics[scale=0.3]{Range.png}
+      \end{center} 
     \end{block}
   \end{frame}
   
@@ -95,9 +99,8 @@
     Contient l'émetteur/récepteur radio, avec un mécanisme de contrôle de qualité du signal et CCA
     \begin{block}{Débit}
       \begin{center}
-       \includegraphics[scale=0.25]{OSI-Zigbee.png}
-      \end{center}     
-     %TO DO METTRE IMAGE
+       \includegraphics[scale=0.25]{Vitesse-Zigbee.png}
+      \end{center}
     \end{block}
   \end{frame}
   
@@ -119,7 +122,9 @@
         \item En-tête (contrôle de trame, numéro de séquence, adressage)
         \item Données
         \item Pied (CRC)
-        %TO DO METTRE IMAGE
+        \begin{center}
+         \includegraphics[scale=0.5]{Couche-MAC.png}
+        \end{center} 
       \end{itemize}
     \end{block}
     \begin{block}{Il existe deux modes de fonctionnement}
@@ -132,7 +137,7 @@
   
   \begin{frame}
     \frametitle{La couche d'accès au medium (MAC)}
-    \begin{block}{Le mode non-coordonnée}
+    \begin{block}{Le mode non-Coordonnée}
       \begin{itemize}
         \item Pas d'emission de \textit{beacon}
         \item Fonctionnement CSMA/CA pour gérer les collisions
@@ -143,12 +148,14 @@
 
   \begin{frame}
     \frametitle{La sous-couche d'accès au medium (MAC)}
-    \begin{block}{Le mode coordonnée}
+    \begin{block}{Le mode Coordonnée}
       Le coordinateur diffuse périodiquement des \textit{beacon}. Tous les dispositifs sont informés de :
       \begin{itemize}
         \item La durée de la \textit{superframe} et quand ils peuvent transmettre des données en CSMA/CA
         \item A partir de quel moment le coordinateur rentre en hibernation et pour quelle durée
-        %TO DO METTRE IMAGE
+	\begin{center}
+	\includegraphics[scale=0.4]{Supertrame.png}
+	\end{center} 
       \end{itemize}
     \end{block}
   \end{frame}
