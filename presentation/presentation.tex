@@ -32,39 +32,44 @@
     \end{frame} 
   }
 
- \section{Introduction}
+\section{Introduction}
   \begin{frame}
-   \frametitle{Réseaux Zigbee}
+   \frametitle{Zigbee, IEEE 802.15.4 et LR WPAN}
+   \begin{block}{Zigbee IEEE 802.15.4}
    \begin{itemize}
-    \item Histoire breve
-    \item Intérêt, application (domotique)
-    \item Droit, license, implémentation
-    \item Avenir
-
+	   \item IEEE 802.15.4 définit les couches basses (physique et mac)
+	   \item Zigbee définit les couches réseau et applicative
+	   \item Cependant Zigbee fonctionne toujours sur 802.15.4, on confond souvent les deux..
    \end{itemize}
+   \end{block}
   \end{frame}
-  
-  \begin{frame}
+
+\begin{frame}
    \frametitle{Fonctions principales}
-   Depuis \textit{Zigbee}
+
+   \begin{block}{\textit{Zigbee} doit permettre de construire un réseau avec des équipements}
    \begin{itemize}
-    \item 
-    \item 
-    \item 
-    \item 
+    \item de faible consommation
+    \item de faible débit/portée
+    \item de faible puissance (de calcul)
    \end{itemize}
+   Ce qui n'empêche pas le protocole d'implémenter AES128 notamment pour la payload
+	\end{block}
   \end{frame}
 
   \begin{frame}
      \frametitle{Stratégie}
-    \begin{itemize}
-     \item 
-     \item 
-    \end{itemize}
-    \begin{alertblock}{Example}
-      Example
-    \end{alertblock}
+	 \begin{block}{Zigbee est porté par la \textit{Zigbee Alliance}}
+	    \begin{itemize}
+		    \item créée en 2003
+		    \item à l'époque sans concurrent important
+		    \item désormais en compétition avec WeMo, Brillo et Thread (nous y reviendrons)
+	    \end{itemize}
+	    Les enjeux sont importants pour l'IoT. Applications à la domotique, contrôle industriel, smart cities...
+	\end{block}
   \end{frame}
+
+ 
   
  \section{La norme IEEE 802.15.4}
   \begin{frame}
@@ -73,16 +78,6 @@
       \begin{center}
        \includegraphics[scale=0.4]{OSI-Zigbee.png}
       \end{center}  
-  \end{frame}
-
-  \begin{frame}
-    \frametitle{Détails}
-    Protocole de communication de la famille des LR WPAN
-    \begin{itemize}
-      \item Faible consommation
-      \item Faible portée
-      \item Faible débit
-    \end{itemize}
   \end{frame}
 
   \begin{frame}
@@ -196,11 +191,35 @@
     \end{itemize}
   \end{frame}
 
-  \section{Conclusion}
+\section{Conclusion}
   \begin{frame}
-    \begin{center}
-      Merci de votre attention !
-    \end{center}
+  	\begin{block}{Zigbee est toujours le protocole de référence :}
+	\begin{itemize}
+		\item Porté par un consortium à la différence de Thread/Brillo (Google) Homekit (Apple) WeMo (Belkin), composé de Phillips/TexasInstrument/Schneider/NXP...
+		\item Connu depuis longtemps d'où 75\% des parts de marché
+		\item Possibilité pour les constructeurs de modifier les "profils Zigbee" i.e enrichir la couche applicative
+		\item protocole en évolution constante : Zigbee 3.0 en développement
+\end{itemize}  
+\end{block}
+\end{frame}
+  
+
+\begin{frame}
+	  \begin{block}{Cependant quelques écueils qui pourraient se révéler graves}
+	  \begin {itemize}
+  \item Non compatible avec IP à la différence de 6LowPAN (sur lequel est basé Thread), ces protocoles devraient représenter 35\% des ventes en 2019 (2\% ajdh)
+  \item une force est une faiblesse : pas d'entité unique qui porte le standard 
+  \item de même les profils différents sont mal utilisés : amènent à des incompatibilités
+  \item problèmes liés à la sécurité
+\begin{itemize}
+	\item Le réseau contient des noeuds à communication chiffrés, d'autres non, attque MiM
+	\item Attaques restreintes (faible puissance de calcul)
+	\item mais à venir !
+\end{itemize}
+  \end{itemize}
+\end{block}
   \end{frame}
+
+  
 
 \end{document}
