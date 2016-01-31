@@ -8,7 +8,7 @@
 \usepackage{beamerfontthemecs}
 \usepackage{beamerinnerthemecs}
 \usepackage{beamercolorthemecs}
-
+  
 \usetheme{cs}
 \useoutertheme{cs}
 \usefonttheme{cs}
@@ -164,19 +164,45 @@
     \end{itemize}
   \end{frame}
 
-  \section{Les couches 4 à 7}
+  \section{Le protocole ZigBee - Couche réseau et applicative}
+
   \begin{frame}
-    \frametitle{Présentation}
+   \frametitle{Noeud du réseau}
+   \begin{block}{Différents éléments qui composent le réseau}
+    Un réseau Zigbee contient trois types de noeuds :
     \begin{itemize}
-      \item 
-      \item 
+     \item ZigBee Coordinator (ZC)\\
+     Unique pour l'ensemble du réseau.
+     \item ZigBee Router (ZR)
+     \item ZigBee End Device (ZED)\\
+     Le noeud le plus simple du réseau. Il n'est qu'un élément final et ne participe pas au routage des messages
     \end{itemize}
-    Example : 
-    \begin{itemize}
-      \item 
-      \item 
-    \end{itemize}
+   \end{block}
   \end{frame}
+  
+  \begin{frame}
+   \frametitle{Topologie du réseau}
+   \begin{block}{Plusieurs type de topologie sont envisageable}
+   \begin{columns}
+    \column{0.5\textwidth}
+    \begin{itemize}
+     \item Topologie en arbre\\
+     Les noeuds qui le peuvent se connecte au ZC, et les noeud plus éloignés se connectent à l'un des ZR qui sont à sa porté
+     \item Topologie maillée\\
+     Tous les noeuds à porté les uns des autre peuvent communiquer entre eux
+    \end{itemize}
+
+    \column{0.5\textwidth}
+    \includegraphics[scale=0.3]{Topologie-Maille.png}
+   \end{columns}
+   \end{block}
+  \end{frame}
+  
+  \begin{frame}
+   \frametitle{Adressage}
+  \end{frame}
+
+
 
   \begin{frame}
     \frametitle{Adressage}

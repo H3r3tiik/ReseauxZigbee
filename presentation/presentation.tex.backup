@@ -8,7 +8,7 @@
 \usepackage{beamerfontthemecs}
 \usepackage{beamerinnerthemecs}
 \usepackage{beamercolorthemecs}
-
+  
 \usetheme{cs}
 \useoutertheme{cs}
 \usefonttheme{cs}
@@ -16,7 +16,7 @@
 \usecolortheme{cs}
 
 \title[Les Réseaux Zigbee]{Les Réseaux Zigbee}
-\author{\textbf{Thibault \textsc{Lengagne}, Sofian \textsc{Medbouhi} et Staninslas \textsc{Fechner}}}
+\author{\textbf{Thibault \textsc{Lengagne}, Sofian \textsc{Medbouhi} et Stanislas \textsc{Fechner}}}
 \institute{Centrale Supélec - Campus de Rennes}
 
 \begin{document}
@@ -32,69 +32,70 @@
     \end{frame} 
   }
 
- \section{Introduction}
+\section{Introduction}
   \begin{frame}
-   \frametitle{Réseaux Zigbee}
+   \frametitle{Zigbee, IEEE 802.15.4 et LR WPAN}
+   \begin{block}{Zigbee IEEE 802.15.4}
    \begin{itemize}
-    \item Histoire breve
-    \item Intérêt, application (domotique)
-    \item Droit, license, implémentation
-    \item Avenir
-
+	   \item IEEE 802.15.4 définit les couches basses (physique et mac)
+	   \item Zigbee définit les couches réseau et applicative
+	   \item Cependant Zigbee fonctionne toujours sur 802.15.4, on confond souvent les deux..
    \end{itemize}
+   \end{block}
   \end{frame}
-  
-  \begin{frame}
+
+\begin{frame}
    \frametitle{Fonctions principales}
-   Depuis \textit{Zigbee}
+
+   \begin{block}{\textit{Zigbee} doit permettre de construire un réseau avec des équipements}
    \begin{itemize}
-    \item 
-    \item 
-    \item 
-    \item 
+    \item de faible consommation
+    \item de faible débit/portée
+    \item de faible puissance (de calcul)
    \end{itemize}
+   Ce qui n'empêche pas le protocole d'implémenter AES128 notamment pour la payload
+	\end{block}
   \end{frame}
 
   \begin{frame}
      \frametitle{Stratégie}
-    \begin{itemize}
-     \item 
-     \item 
-    \end{itemize}
-    \begin{alertblock}{Example}
-      Example
-    \end{alertblock}
+	 \begin{block}{Zigbee est porté par la \textit{Zigbee Alliance}}
+	    \begin{itemize}
+		    \item créée en 2003
+		    \item à l'époque sans concurrent important
+		    \item désormais en compétition avec WeMo, Brillo et Thread (nous y reviendrons)
+	    \end{itemize}
+	    Les enjeux sont importants pour l'IoT. Applications à la domotique, contrôle industriel, smart cities...
+	\end{block}
   \end{frame}
+
+ 
   
  \section{La norme IEEE 802.15.4}
   \begin{frame}
     \frametitle{Zigbee et la norme 802.15.4}
     Le protocole Zigbee utilise ce protocole comme cadre de fonctionnement :
-     %TO DO : Mettre imag   
-  \end{frame}
-
-  \begin{frame}
-    \frametitle{Détails}
-    802.15.4 est un protocole de communication de la famille des LR WPAN (Low Range Wireless Personal Area Network)
-    \begin{itemize}
-      \item Faible consommation, Faible portée, Faible débit
-      \item Réseau de type étoile ou maillé
-      \item Protocole très simple (non sécurisé)
-    \end{itemize}
+      \begin{center}
+       \includegraphics[scale=0.4]{OSI-Zigbee.png}
+      \end{center}  
   \end{frame}
 
   \begin{frame}
     \frametitle{Comparatif}
     \begin{block}{Schema comparatif des différents protocole sans fil}
-    %TO DO METTRE IMAGE
+      \begin{center}
+       \includegraphics[scale=0.3]{Range.png}
+      \end{center} 
     \end{block}
   \end{frame}
   
   \begin{frame}
     \frametitle{La couche physique}
-    La couche physique contient l'émetteur/récepteur radio, avec un mécanisme de contrôle de qualité du signal et CCA
+    Contient l'émetteur/récepteur radio, avec un mécanisme de contrôle de qualité du signal et CCA
     \begin{block}{Débit}
-     %TO DO METTRE IMAGE
+      \begin{center}
+       \includegraphics[scale=0.25]{Vitesse-Zigbee.png}
+      \end{center}
     \end{block}
   \end{frame}
   
@@ -116,7 +117,9 @@
         \item En-tête (contrôle de trame, numéro de séquence, adressage)
         \item Données
         \item Pied (CRC)
-        %TO DO METTRE IMAGE
+        \begin{center}
+         \includegraphics[scale=0.5]{Couche-MAC.png}
+        \end{center} 
       \end{itemize}
     \end{block}
     \begin{block}{Il existe deux modes de fonctionnement}
@@ -129,7 +132,7 @@
   
   \begin{frame}
     \frametitle{La couche d'accès au medium (MAC)}
-    \begin{block}{Le mode non-coordonnée}
+    \begin{block}{Le mode non-Coordonnée}
       \begin{itemize}
         \item Pas d'emission de \textit{beacon}
         \item Fonctionnement CSMA/CA pour gérer les collisions
@@ -140,12 +143,14 @@
 
   \begin{frame}
     \frametitle{La sous-couche d'accès au medium (MAC)}
-    \begin{block}{Le mode coordonnée}
+    \begin{block}{Le mode Coordonnée}
       Le coordinateur diffuse périodiquement des \textit{beacon}. Tous les dispositifs sont informés de :
       \begin{itemize}
         \item La durée de la \textit{superframe} et quand ils peuvent transmettre des données en CSMA/CA
         \item A partir de quel moment le coordinateur rentre en hibernation et pour quelle durée
-        %TO DO METTRE IMAGE
+	\begin{center}
+	\includegraphics[scale=0.4]{Supertrame.png}
+	\end{center} 
       \end{itemize}
     \end{block}
   \end{frame}
@@ -159,7 +164,7 @@
     \end{itemize}
   \end{frame}
 
-  \section{Les couches 4 à 7}
+  \section{Le protocole ZigBee - Couche réseau et applicative}
   \begin{frame}
     \frametitle{Présentation}
     \begin{itemize}
@@ -172,6 +177,36 @@
       \item 
     \end{itemize}
   \end{frame}
+  
+  \begin{frame}
+   \frametitle{Topologie du réseau}
+   \begin{columns}
+    \column{0.5\textwidth}
+    Un réseau Zigbee contient trois types de noeuds :
+    \begin{itemize}
+     \item ZigBee Coordinator
+     Unique pour l'ensemble du réseau.
+     \item ZigBee Router
+     
+     \item ZigBee End Device
+     Le noeud le plus simple du réseau. Il n'est qu'un élément final et ne participe pas au routage des messages
+    \end{itemize}
+    Il existe deux type de topologie : 
+    \begin{itemize}
+     \item Topologie en arbre
+     \item Topologie maillée
+    \end{itemize}
+
+    \column{0.5\textwidth}
+    \includegraphics[scale=0.3]{Topologie-Maille.png}
+   \end{columns}
+  \end{frame}
+  
+  \begin{frame}
+   \frametitle{Adressage}
+  \end{frame}
+
+
 
   \begin{frame}
     \frametitle{Adressage}
@@ -186,11 +221,35 @@
     \end{itemize}
   \end{frame}
 
-  \section{Conclusion}
+\section{Conclusion}
   \begin{frame}
-    \begin{center}
-      Merci de votre attention !
-    \end{center}
+  	\begin{block}{Zigbee est toujours le protocole de référence :}
+	\begin{itemize}
+		\item Porté par un consortium à la différence de Thread/Brillo (Google) Homekit (Apple) WeMo (Belkin), composé de Phillips/TexasInstrument/Schneider/NXP...
+		\item Connu depuis longtemps d'où 75\% des parts de marché
+		\item Possibilité pour les constructeurs de modifier les "profils Zigbee" i.e enrichir la couche applicative
+		\item protocole en évolution constante : Zigbee 3.0 en développement
+\end{itemize}  
+\end{block}
+\end{frame}
+  
+
+\begin{frame}
+	  \begin{block}{Cependant quelques écueils qui pourraient se révéler graves}
+	  \begin {itemize}
+  \item Non compatible avec IP à la différence de 6LowPAN (sur lequel est basé Thread), ces protocoles devraient représenter 35\% des ventes en 2019 (2\% ajdh)
+  \item une force est une faiblesse : pas d'entité unique qui porte le standard 
+  \item de même les profils différents sont mal utilisés : amènent à des incompatibilités
+  \item problèmes liés à la sécurité
+\begin{itemize}
+	\item Le réseau contient des noeuds à communication chiffrés, d'autres non, attque MiM
+	\item Attaques restreintes (faible puissance de calcul)
+	\item mais à venir !
+\end{itemize}
+  \end{itemize}
+\end{block}
   \end{frame}
+
+  
 
 \end{document}
