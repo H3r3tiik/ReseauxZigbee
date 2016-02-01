@@ -165,90 +165,118 @@
   \end{frame}
 
   \section{Le protocole ZigBee - Couche réseau et applicative}
+
   \begin{frame}
-    \frametitle{Présentation}
+   \frametitle{Noeud du réseau}
+   \begin{block}{Différents éléments qui composent le réseau}
+    Un réseau Zigbee contient trois types de noeuds :
     \begin{itemize}
-      \item 
-      \item 
+     \item ZigBee Coordinator (ZC)\\
+     Unique pour l'ensemble du réseau.
+     \item ZigBee Router (ZR)
+     \item ZigBee End Device (ZED)\\
+     Le noeud le plus simple du réseau. Il n'est qu'un élément final et ne participe pas au routage des messages
     \end{itemize}
-    Example : 
-    \begin{itemize}
-      \item 
-      \item 
-    \end{itemize}
+   \end{block}
   \end{frame}
   
   \begin{frame}
    \frametitle{Topologie du réseau}
+   \begin{block}{Plusieurs type de topologie sont envisageable}
    \begin{columns}
     \column{0.5\textwidth}
-    Un réseau Zigbee contient trois types de noeuds :
     \begin{itemize}
-     \item ZigBee Coordinator
-     Unique pour l'ensemble du réseau.
-     \item ZigBee Router
-     
-     \item ZigBee End Device
-     Le noeud le plus simple du réseau. Il n'est qu'un élément final et ne participe pas au routage des messages
-    \end{itemize}
-    Il existe deux type de topologie : 
-    \begin{itemize}
-     \item Topologie en arbre
-     \item Topologie maillée
+     \item Topologie en arbre\\
+     Les noeuds qui le peuvent se connecte au ZC, et les noeud plus éloignés se connectent à l'un des ZR qui sont à sa porté
+     \item Topologie maillée\\
+     Tous les noeuds à porté les uns des autre peuvent communiquer entre eux
     \end{itemize}
 
     \column{0.5\textwidth}
     \includegraphics[scale=0.3]{Topologie-Maille.png}
    \end{columns}
+   \end{block}
   \end{frame}
   
-  \begin{frame}
-   \frametitle{Adressage}
-  \end{frame}
-
-
-
   \begin{frame}
     \frametitle{Adressage}
-    \begin{itemize}
-      \item Zigbee propose un algorithme de distribution d'adresses atomatique et décentralisé
-      \item 
-    \end{itemize}
-    Example : 
-    \begin{itemize}
-      \item 
-      \item 
-    \end{itemize}
+    \begin{block}{ZigBee propose également deux type d'adressages différents}
+      \begin{itemize}
+	\item Adressage libre
+	 \item Adressage en arbre\\
+	Zigbee propose un algorithme de distribution d'adresses atomatique et décentralisé
+      \end{itemize}     
+    \end{block}
+  \end{frame}
+  
+  \begin{frame}
+    \frametitle{Routage}
+    \begin{block}{Routage}
+      \begin{itemize}
+        \item Routage à la demande
+        \item Routage hiérarchique
+      \end{itemize}
+    \end{block}
+  \end{frame}
+  
+  \begin{frame}
+   \frametitle{Couche Applicative}
+   \begin{block}{Profils d'application}
+     ZigBee propose plusieurs profils adaptés pour différents usage :
+     \begin{itemize}
+      \item Gestion de bâtiments : contrôle des accès, de l'éclairage, du chauffage
+      \item Périphérique électronique : clavier ou souris sans fil, télécommande
+      \item Médical : suivi des patients, monitioring des activités du corps humain pendant un effort physique
+     \end{itemize}
+
+   \end{block}
+
   \end{frame}
 
-\section{Conclusion}
+
+  \section{Conclusion}
+
   \begin{frame}
-  	\begin{block}{Zigbee est toujours le protocole de référence :}
-	\begin{itemize}
-		\item Porté par un consortium à la différence de Thread/Brillo (Google) Homekit (Apple) WeMo (Belkin), composé de Phillips/TexasInstrument/Schneider/NXP...
-		\item Connu depuis longtemps d'où 75\% des parts de marché
-		\item Possibilité pour les constructeurs de modifier les "profils Zigbee" i.e enrichir la couche applicative
-		\item protocole en évolution constante : Zigbee 3.0 en développement
-\end{itemize}  
-\end{block}
-\end{frame}
+    \frametitle{Conclusion}
+    \begin{block}{Zigbee est toujours le protocole de référence :}
+      \begin{itemize}
+	\item Porté par un consortium à la différence de Thread/Brillo (Google) Homekit (Apple) WeMo (Belkin), composé de Phillips/TexasInstrument/Schneider/NXP...
+	\item Connu depuis longtemps d'où 75\% des parts de marché
+	\item Possibilité pour les constructeurs de modifier les "profils Zigbee" i.e enrichir la couche applicative
+	\item protocole en évolution constante : Zigbee 3.0 en développement
+      \end{itemize}  
+    \end{block}
+  \end{frame}
   
 
-\begin{frame}
-	  \begin{block}{Cependant quelques écueils qui pourraient se révéler graves}
-	  \begin {itemize}
-  \item Non compatible avec IP à la différence de 6LowPAN (sur lequel est basé Thread), ces protocoles devraient représenter 35\% des ventes en 2019 (2\% ajdh)
-  \item une force est une faiblesse : pas d'entité unique qui porte le standard 
-  \item de même les profils différents sont mal utilisés : amènent à des incompatibilités
-  \item problèmes liés à la sécurité
-\begin{itemize}
-	\item Le réseau contient des noeuds à communication chiffrés, d'autres non, attque MiM
-	\item Attaques restreintes (faible puissance de calcul)
-	\item mais à venir !
-\end{itemize}
-  \end{itemize}
-\end{block}
+  \begin{frame}
+    \frametitle{Conclusion}
+    \begin{block}{Cependant quelques écueils qui pourraient se révéler graves}
+      \begin {itemize}
+	\item Non compatible avec IP à la différence de 6LowPAN (sur lequel est basé Thread), ces protocoles devraient représenter 35\% des ventes en 2019 (2\% ajdh)
+	\item une force est une faiblesse : pas d'entité unique qui porte le standard 
+	\item de même les profils différents sont mal utilisés : amènent à des incompatibilités
+	\item problèmes liés à la sécurité
+	\begin{itemize}
+	  \item Le réseau contient des noeuds à communication chiffrés, d'autres non, attque MiM
+	  \item Attaques restreintes (faible puissance de calcul)
+	  \item mais à venir !
+	\end{itemize}
+      \end{itemize}
+    \end{block}
   \end{frame}
+  
+  \begin{frame}
+   \frametitle{Bibliographie}
+   \begin{block}{Bibliographie}
+     \begin{itemize}
+      \item http://oatao.univ-toulouse.fr/12350/1/Francomme_12350.pdf
+     \end{itemize}
+
+   \end{block}
+
+  \end{frame}
+
 
   
 

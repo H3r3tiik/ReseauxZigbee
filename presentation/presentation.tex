@@ -8,6 +8,7 @@
 \usepackage{beamerfontthemecs}
 \usepackage{beamerinnerthemecs}
 \usepackage{beamercolorthemecs}
+\usepackage{hyperref}
   
 \usetheme{cs}
 \useoutertheme{cs}
@@ -199,27 +200,45 @@
   \end{frame}
   
   \begin{frame}
-   \frametitle{Adressage}
-  \end{frame}
-
-
-
-  \begin{frame}
     \frametitle{Adressage}
-    \begin{itemize}
-      \item Zigbee propose un algorithme de distribution d'adresses atomatique et décentralisé
-      \item 
-    \end{itemize}
-    Example : 
-    \begin{itemize}
-      \item 
-      \item 
-    \end{itemize}
+    \begin{block}{ZigBee propose également deux type d'adressages différents}
+      \begin{itemize}
+	\item Adressage libre
+	 \item Adressage en arbre\\
+	Zigbee propose un algorithme de distribution d'adresses atomatique et décentralisé
+      \end{itemize}     
+    \end{block}
   \end{frame}
+  
+  \begin{frame}
+    \frametitle{Routage}
+    \begin{block}{Routage}
+      \begin{itemize}
+        \item Routage à la demande
+        \item Routage hiérarchique
+      \end{itemize}
+    \end{block}
+  \end{frame}
+  
+  \begin{frame}
+   \frametitle{Couche Applicative}
+   \begin{block}{Profils d'application}
+     ZigBee propose plusieurs profils adaptés pour différents usages :
+     \begin{itemize}
+      \item Gestion de bâtiments : contrôle des accès, de l'éclairage, du chauffage
+      \item Périphérique électronique : clavier ou souris sans fil, télécommande
+      \item Médical : suivi des patients, monitioring des activités du corps humain pendant un effort physique
+     \end{itemize}
+
+   \end{block}
+
+  \end{frame}
+
 
   \section{Conclusion}
 
   \begin{frame}
+    \frametitle{Conclusion}
     \begin{block}{Zigbee est toujours le protocole de référence :}
       \begin{itemize}
 	\item Porté par un consortium à la différence de Thread/Brillo (Google) Homekit (Apple) WeMo (Belkin), composé de Phillips/TexasInstrument/Schneider/NXP...
@@ -232,6 +251,7 @@
   
 
   \begin{frame}
+    \frametitle{Conclusion}
     \begin{block}{Cependant quelques écueils qui pourraient se révéler graves}
       \begin {itemize}
 	\item Non compatible avec IP à la différence de 6LowPAN (sur lequel est basé Thread), ces protocoles devraient représenter 35\% des ventes en 2019 (2\% ajdh)
@@ -246,6 +266,16 @@
       \end{itemize}
     \end{block}
   \end{frame}
+  
+  \begin{frame}
+   \frametitle{Bibliographie}
+   \begin{block}{Bibliographie}
+     \begin{itemize}
+      \item \url{http://oatao.univ-toulouse.fr/12350/1/Francomme_12350.pdf}
+     \end{itemize}
+   \end{block}
+  \end{frame}
+
 
   
 
