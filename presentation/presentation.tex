@@ -168,67 +168,79 @@
   \section{Le protocole ZigBee - Couche réseau et applicative}
 
   \begin{frame}
-   \frametitle{Noeud du réseau}
-   \begin{block}{Différents éléments qui composent le réseau}
-    Un réseau Zigbee contient trois types de noeuds :
+   \frametitle{Noeuds du réseau}
+   \begin{block}{Un réseau Zigbee contient trois types de noeuds}
     \begin{itemize}
-     \item ZigBee Coordinator (ZC)\\
-     Unique pour l'ensemble du réseau.
-     \item ZigBee Router (ZR)
-     \item ZigBee End Device (ZED)\\
-     Le noeud le plus simple du réseau. Il n'est qu'un élément final et ne participe pas au routage des messages
+     \item \textbf{ZigBee Coordinator} : unique dans le réseau, la création du réseau s'articule autour de lui. Lorsque le réseau est crée, il se comporte comme un noeud routeur
+     \item \textbf{ZigBee Router} : participe au routage, mais peut également envoyer et recevoir des messages
+     \item \textbf{ZigBee End Device} : noeud le plus simple du réseau. Il n'est qu'un élément final et ne participe pas au routage des messages
     \end{itemize}
    \end{block}
   \end{frame}
   
   \begin{frame}
+   \frametitle{Formation du réseau}
+   \begin{block}{La création du réseau démarre en installant le premier noeud, qui joue le rôle de coordinateur}
+    \begin{itemize}
+     \item Le réseau est identifié par un canal et un identifiant de réseau, ce qui permet à de réseau d'utiliser le même canal
+     \item Un noeud cherche un réseau en scannant les canal autour de lui
+     \item Lorsqu'il noeud veut intégrer le réseau, il envoie une demande de connexion au noeud routeur le plus proche de lui 
+    \end{itemize}
+   \end{block}
+  \end{frame}
+
+  
+  \begin{frame}
    \frametitle{Topologie du réseau}
    \begin{block}{Plusieurs type de topologie sont envisageable}
    \begin{columns}
-    \column{0.5\textwidth}
+    \column{0.6\textwidth}
     \begin{itemize}
-     \item Topologie en arbre\\
-     Les noeuds qui le peuvent se connecte au ZC, et les noeud plus éloignés se connectent à l'un des ZR qui sont à sa porté
-     \item Topologie maillée\\
-     Tous les noeuds à porté les uns des autre peuvent communiquer entre eux
+     \item \textbf{Topologie en arbre} : les noeuds qui le peuvent se connectent au coordinateur, et les noeud trop éloignés se connectent à l'un au routeur le plus proche
+     \item \textbf{Topologie maillée} : tous les noeuds routeurs à porté les uns des autres peuvent communiquer entre eux. Les noeuds terminaux ne sont connecté qu'a un routeur
     \end{itemize}
-
-    \column{0.5\textwidth}
-    \includegraphics[scale=0.3]{Topologie-Maille.png}
+    \column{0.4\textwidth}
+    \includegraphics[scale=0.25]{Topologie-Maille.png}
    \end{columns}
    \end{block}
   \end{frame}
   
   \begin{frame}
     \frametitle{Adressage}
-    \begin{block}{ZigBee propose également deux type d'adressages différents}
+    \begin{block}{ZigBee autorise deux type d'adressages différents}
       \begin{itemize}
-	\item Adressage libre
-	 \item Adressage en arbre\\
-	Zigbee propose un algorithme de distribution d'adresses atomatique et décentralisé
+	\item \textbf{Adressage libre} : determiné par le profil applicatif
+	 \item \textbf{Adressage en arbre} : Zigbee propose un algorithme de distribution d'adresses automatique suivant l'arborescence du réseau autour du coordinateur
+	 \begin{itemize}
+	  \item Décentralisé, ce qui minimise les échange au sein du réseau pour attribuer une nouvelle adresse
+	  \item Unicité des adresses
+	  \item Facilite le routage des messages
+	 \end{itemize}
+
       \end{itemize}     
     \end{block}
   \end{frame}
   
   \begin{frame}
     \frametitle{Routage}
-    \begin{block}{Routage}
+    \begin{block}{Selon le type d'addressage utilisé, deux protocole de routage peuvent être utilisé}
       \begin{itemize}
-        \item Routage à la demande
-        \item Routage hiérarchique
+        \item \textbf{Routage à la demande} : le noeud vérifie sa table de routage. Soit il trouve une entrée correspondante à sa destination et transmet le message, soit il diffuse une requète de demande de route. Cette requète de route atteint le noeud destinataire, qui répond en envoyant un message qui empreinte la route inverse, pour atteindre le noeud emetteur, qui peut alors envoyer son message
+        \item \textbf{Routage hiérarchique} : valable uniquement pour l'adressage en arbre. Ce type d'adressage étant deterministe, il est possible de determiner à quel voisin transmettre le message pour atteindre le noeud final
       \end{itemize}
     \end{block}
   \end{frame}
   
   \begin{frame}
    \frametitle{Couche Applicative}
-   \begin{block}{Profils d'application}
-     ZigBee propose plusieurs profils adaptés pour différents usages :
+   \begin{block}{ZigBee propose plusieurs profils adaptés à différents usages}
      \begin{itemize}
-      \item Gestion de bâtiments : contrôle des accès, de l'éclairage, du chauffage
-      \item Périphérique électronique : clavier ou souris sans fil, télécommande
-      \item Médical : suivi des patients, monitioring des activités du corps humain pendant un effort physique
+      \item \textbf{Gestion de bâtiments} : contrôle des accès, de l'éclairage, du chauffage
+      \item \textbf{Périphérique électronique} : clavier ou souris sans fil, télécommande
+      \item \textbf{Médical} : suivi des patients, monitioring des activités du corps humain pendant un effort physique
      \end{itemize}
+     
+     Chacun de ces profils est en fait un protocole qui determine la nature des messages a transmettre afin de faire fonctionner le réseau
 
    \end{block}
 

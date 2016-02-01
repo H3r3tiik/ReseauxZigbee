@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.1.31)  1 FEB 2016 10:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.1.31)  1 FEB 2016 18:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1407,43 +1407,45 @@ Package pdftex.def Info: Supertrame.png used on input line 157.
 ]
 [16
 
+] [17
+
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 200.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 206.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 200.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 206.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 5.39996pt on input line 200.
- <Topologie-Maille.png, id=493, 516.93124pt x 432.61626pt>
+(Font)              scaled to size 5.39996pt on input line 206.
+ <Topologie-Maille.png, id=519, 516.93124pt x 432.61626pt>
 File: Topologie-Maille.png Graphic file (type png)
 
 <use Topologie-Maille.png>
-Package pdftex.def Info: Topologie-Maille.png used on input line 200.
-(pdftex.def)             Requested size: 155.08057pt x 129.78587pt.
- [17
+Package pdftex.def Info: Topologie-Maille.png used on input line 206.
+(pdftex.def)             Requested size: 129.23248pt x 108.1538pt.
+ [18
 
- <./Topologie-Maille.png>] [18
-
-] [19
+ <./Topologie-Maille.png>]
+LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 222.
+ [19
 
 ] [20
 
-]
-(./presentation.toc) [21
-
-] [22
+] [21
 
 ]
-LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 268.
- [23
+(./presentation.toc) [22
+
+] [23
+
+] [24
 
 ]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 277.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 289.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [24
+) [25
 
 ]
 \tf@nav=\write6
@@ -1455,24 +1457,24 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 \tf@snm=\write8
 \openout8 = `presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 282.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 282.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 294.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 294.
 
 (./presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 282.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 282.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 294.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 294.
 Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: 62EE0D2DD296724D06EE04F327325E97;237.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 282.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 294.
  ) 
 Here is how much of TeX's memory you used:
- 21302 strings out of 493085
- 411572 string characters out of 6136917
+ 21306 strings out of 493085
+ 411607 string characters out of 6136917
  489950 words of memory out of 5000000
- 24205 multiletter control sequences out of 15000+600000
+ 24207 multiletter control sequences out of 15000+600000
  57116 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 50i,20n,59p,392b,964s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 50i,20n,59p,429b,964s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/
@@ -1480,10 +1482,10 @@ fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/
 uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
 
-Output written on presentation.pdf (24 pages, 356752 bytes).
+Output written on presentation.pdf (25 pages, 361644 bytes).
 PDF statistics:
- 746 PDF objects out of 1000 (max. 8388607)
- 684 compressed objects within 7 object streams
- 53 named destinations out of 1000 (max. 500000)
+ 775 PDF objects out of 1000 (max. 8388607)
+ 711 compressed objects within 8 object streams
+ 55 named destinations out of 1000 (max. 500000)
  134 words of extra memory for PDF output out of 10000 (max. 10000000)
 
