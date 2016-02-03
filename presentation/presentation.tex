@@ -182,9 +182,9 @@
    \frametitle{Formation du réseau}
    \begin{block}{La création du réseau démarre en installant le premier noeud, qui joue le rôle de coordinateur}
     \begin{itemize}
-     \item Le réseau est identifié par un canal et un identifiant de réseau, ce qui permet à de réseau d'utiliser le même canal
-     \item Un noeud cherche un réseau en scannant les canal autour de lui
-     \item Lorsqu'il noeud veut intégrer le réseau, il envoie une demande de connexion au noeud routeur le plus proche de lui 
+     \item Le réseau est identifié par un canal et un identifiant de réseau. Cela permet à plusieurs réseau d'utiliser le même canal
+     \item Un noeud recherche un réseau en scannant les canal autour de lui
+     \item Lorsqu'il souhaite intégrer le réseau, il envoie une demande de connexion au noeud routeur le plus proche de lui 
     \end{itemize}
    \end{block}
   \end{frame}
@@ -192,12 +192,12 @@
   
   \begin{frame}
    \frametitle{Topologie du réseau}
-   \begin{block}{Plusieurs type de topologie sont envisageable}
+   \begin{block}{Plusieurs type de topologies sont envisageable}
    \begin{columns}
     \column{0.6\textwidth}
     \begin{itemize}
-     \item \textbf{Topologie en arbre} : les noeuds qui le peuvent se connectent au coordinateur, et les noeud trop éloignés se connectent à l'un au routeur le plus proche
-     \item \textbf{Topologie maillée} : tous les noeuds routeurs à porté les uns des autres peuvent communiquer entre eux. Les noeuds terminaux ne sont connecté qu'a un routeur
+     \item \textbf{Topologie en arbre} : les noeuds qui le peuvent se connectent au coordinateur, et les noeud trop éloignés se connectent au routeur le plus proche
+     \item \textbf{Topologie maillée} : tous les noeuds routeurs à porté les uns des autres peuvent communiquer entre eux. Les noeuds terminaux ne sont connectés qu'à un routeur
     \end{itemize}
     \column{0.4\textwidth}
     \includegraphics[scale=0.25]{Topologie-Maille.png}
@@ -209,8 +209,8 @@
     \frametitle{Adressage}
     \begin{block}{ZigBee autorise deux type d'adressages différents}
       \begin{itemize}
-	\item \textbf{Adressage libre} : determiné par le profil applicatif
-	 \item \textbf{Adressage en arbre} : Zigbee propose un algorithme de distribution d'adresses automatique suivant l'arborescence du réseau autour du coordinateur
+	\item \textbf{Adressage libre} : l'addressage est determiné par le profil applicatif
+	 \item \textbf{Adressage en arbre} : Zigbee propose un algorithme de distribution d'adresses automatique. Cet algorithme suit l'arborescence du réseau autour du coordinateur
 	 \begin{itemize}
 	  \item Décentralisé, ce qui minimise les échange au sein du réseau pour attribuer une nouvelle adresse
 	  \item Unicité des adresses
@@ -223,9 +223,9 @@
   
   \begin{frame}
     \frametitle{Routage}
-    \begin{block}{Selon le type d'addressage utilisé, deux protocole de routage peuvent être utilisé}
+    \begin{block}{Selon le type d'addressage utilisé, deux protocoles de routage peuvent être utilisés}
       \begin{itemize}
-        \item \textbf{Routage à la demande} : le noeud vérifie sa table de routage. Soit il trouve une entrée correspondante à sa destination et transmet le message, soit il diffuse une requète de demande de route. Cette requète de route atteint le noeud destinataire, qui répond en envoyant un message qui empreinte la route inverse, pour atteindre le noeud emetteur, qui peut alors envoyer son message
+        \item \textbf{Routage à la demande} : le noeud vérifie sa table de routage. Soit il trouve une entrée correspondante à sa destination et transmet le message, sinon il diffuse une requète de demande de route. Cette requète de route atteint le noeud destinataire, qui répond en renvoyant un message qui emprunte la route inverse. Ce message atteint le noeud emetteur, qui peut alors envoyer son message en suivant cette route
         \item \textbf{Routage hiérarchique} : valable uniquement pour l'adressage en arbre. Ce type d'adressage étant deterministe, il est possible de determiner à quel voisin transmettre le message pour atteindre le noeud final
       \end{itemize}
     \end{block}
@@ -277,18 +277,6 @@
 	\end{itemize}
       \end{itemize}
     \end{block}
-  \end{frame}
-  
-  \begin{frame}
-   \frametitle{Bibliographie}
-   \begin{block}{Bibliographie}
-     \begin{itemize}
-      \item \url{http://oatao.univ-toulouse.fr/12350/1/Francomme_12350.pdf}
-     \end{itemize}
-   \end{block}
-  \end{frame}
-
-
-  
+  \end{frame}  
 
 \end{document}
