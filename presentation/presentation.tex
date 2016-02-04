@@ -34,29 +34,6 @@
   }
 
 \section{Introduction}
-  \begin{frame}
-   \frametitle{Zigbee, IEEE 802.15.4 et LR WPAN}
-   \begin{block}{Zigbee IEEE 802.15.4}
-   \begin{itemize}
-	   \item IEEE 802.15.4 définit les couches basses (physique et mac)
-	   \item Zigbee définit les couches réseau et applicative
-	   \item Cependant Zigbee fonctionne toujours sur 802.15.4, on confond souvent les deux..
-   \end{itemize}
-   \end{block}
-  \end{frame}
-
-\begin{frame}
-   \frametitle{Fonctions principales}
-
-   \begin{block}{\textit{Zigbee} doit permettre de construire un réseau avec des équipements}
-   \begin{itemize}
-    \item de faible consommation
-    \item de faible débit/portée
-    \item de faible puissance (de calcul)
-   \end{itemize}
-   Ce qui n'empêche pas le protocole d'implémenter AES128 notamment pour la payload
-	\end{block}
-  \end{frame}
 
   \begin{frame}
      \frametitle{Stratégie}
@@ -68,6 +45,30 @@
 	    \end{itemize}
 	    Les enjeux sont importants pour l'IoT. Applications à la domotique, contrôle industriel, smart cities...
 	\end{block}
+  \end{frame}
+
+\begin{frame}
+   \frametitle{Fonctions principales}
+
+   \begin{block}{\textit{Zigbee} doit permettre de construire un réseau avec des équipements}
+   \begin{itemize}
+    \item de faible consommation (10mA reception, 19mA emission, 3uA hibernation)
+    \item de faible débit/portée (100m)
+    \item de faible puissance (de calcul)
+   \end{itemize}
+   Ce qui n'empêche pas le protocole d'implémenter AES128 notamment pour la payload
+	\end{block}
+  \end{frame}
+
+    \begin{frame}
+   \frametitle{Zigbee, IEEE 802.15.4}
+   \begin{block}{Zigbee IEEE 802.15.4}
+   \begin{itemize}
+	   \item IEEE 802.15.4 définit les couches basses (physique et mac)
+	   \item Zigbee définit les couches réseau et applicative
+	   \item Cependant Zigbee fonctionne toujours sur 802.15.4, on confond souvent les deux..
+   \end{itemize}
+   \end{block}
   \end{frame}
 
  
@@ -122,17 +123,21 @@
         \item Données
         \item Pied (CRC)
         \begin{center}
-         \includegraphics[scale=0.5]{Couche-MAC.png}
+         \includegraphics[scale=0.6]{Couche-MAC.png}
         \end{center} 
       \end{itemize}
     \end{block}
+  \end{frame}
+  
+  \begin{frame}
     \begin{block}{Il existe deux modes de fonctionnement}
       \begin{itemize}
-        \item Le mode non-coordonnée
-        \item Le mode coordonnée, ou balisé
+        \item Le mode non-coordonnée, ou \textit{non-beacon}
+        \item Le mode coordonnée, ou balisé, ou\textit{beacon}
       \end{itemize}
     \end{block}
   \end{frame}
+
   
   \begin{frame}
     \frametitle{La couche d'accès au medium (MAC)}
@@ -166,11 +171,13 @@
 
   \begin{frame}
     \frametitle{La sous-couche de convergence (LLC)}
+    \begin{block}{A la sous-couche MAC est ajouté une sous-couche de convergence LLC}
     \begin{itemize}
-      \item Vérification de l'intégrité des données reçues
+      \item Vérification de l'intégrité des données reçues (CRC)
       \item Contrôle de flux, afin d'éviter la saturation
       \item La convergence d'adressage (correspondance couche 2 et 3 du modèle OSI, gestion du broadcast et en multicast)
     \end{itemize}
+    \end{block}
   \end{frame}
 
   \section{Le protocole ZigBee - Couche réseau et applicative}
