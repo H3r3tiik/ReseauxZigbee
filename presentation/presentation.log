@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.1.26)  4 FEB 2016 07:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.1.26)  4 FEB 2016 09:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1376,23 +1376,29 @@ Package pdftex.def Info: Vitesse-Zigbee.png used on input line 101.
 (pdftex.def)             Requested size: 227.34882pt x 66.7492pt.
  [9
 
- <./Vitesse-Zigbee.png>] [10
+ <./Vitesse-Zigbee.png>]
+<Reseau.png, id=301, 634.37pt x 345.29pt>
+File: Reseau.png Graphic file (type png)
+ <use Reseau.png>
+Package pdftex.def Info: Reseau.png used on input line 115.
+(pdftex.def)             Requested size: 190.31245pt x 103.58778pt.
+ [10
 
-]
-<Couche-MAC.png, id=327, 504.88625pt x 94.3525pt>
+ <./Reseau.png>]
+<Couche-MAC.png, id=329, 504.88625pt x 94.3525pt>
 File: Couche-MAC.png Graphic file (type png)
  <use Couche-MAC.png>
-Package pdftex.def Info: Couche-MAC.png used on input line 132.
+Package pdftex.def Info: Couche-MAC.png used on input line 135.
 (pdftex.def)             Requested size: 252.44249pt x 47.17612pt.
  [11
 
  <./Couche-MAC.png>] [12
 
-] <Supertrame.png, id=382, 554.07pt x 228.855pt>
+] <Supertrame.png, id=384, 554.07pt x 228.855pt>
 File: Supertrame.png Graphic file (type png)
 
 <use Supertrame.png>
-Package pdftex.def Info: Supertrame.png used on input line 157.
+Package pdftex.def Info: Supertrame.png used on input line 160.
 (pdftex.def)             Requested size: 221.62407pt x 91.54037pt.
  [13
 
@@ -1401,18 +1407,9 @@ Package pdftex.def Info: Supertrame.png used on input line 157.
 ] (./presentation.toc) [15
 
 ]
-<Reseau.png, id=467, 634.37pt x 345.29pt>
-File: Reseau.png Graphic file (type png)
- <use Reseau.png>
-Package pdftex.def Info: Reseau.png used on input line 182.
-(pdftex.def)             Requested size: 190.31245pt x 103.58778pt.
-
-Overfull \vbox (12.39278pt too high) detected at line 182
- []
-
 [16
 
- <./Reseau.png>] [17
+] [17
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
@@ -1421,8 +1418,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 209.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 5.39996pt on input line 209.
-
-<Topologie-Maille.png, id=521, 516.93124pt x 432.61626pt>
+ <Topologie-Maille.png, id=521, 516.93124pt x 432.61626pt>
 File: Topologie-Maille.png Graphic file (type png)
 
 <use Topologie-Maille.png>
@@ -1468,7 +1464,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 285.
 Here is how much of TeX's memory you used:
  21248 strings out of 494991
  410457 string characters out of 6180055
- 484464 words of memory out of 5000000
+ 484465 words of memory out of 5000000
  23897 multiletter control sequences out of 15000+600000
  50715 words of font info for 70 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1479,7 +1475,7 @@ f-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic
 /uhvro8a.pfb>
-Output written on presentation.pdf (24 pages, 453310 bytes).
+Output written on presentation.pdf (24 pages, 444537 bytes).
 PDF statistics:
  742 PDF objects out of 1000 (max. 8388607)
  679 compressed objects within 7 object streams
