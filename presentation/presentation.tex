@@ -152,12 +152,17 @@
       \begin{itemize}
         \item La durée de la \textit{superframe} et quand ils peuvent transmettre des données en CSMA/CA
         \item A partir de quel moment le coordinateur rentre en hibernation et pour quelle durée
-	\begin{center}
-	\includegraphics[scale=0.4]{Supertrame.png}
-	\end{center} 
+        \item Tous les dispositifs se réveillent quelques instants avatn l'emission du \textit{beacon}
       \end{itemize}
     \end{block}
   \end{frame}
+  
+  \begin{frame}
+    \begin{center}
+    \includegraphics[scale=0.6]{Supertrame.png}
+    \end{center} 
+  \end{frame}
+
 
   \begin{frame}
     \frametitle{La sous-couche de convergence (LLC)}
@@ -248,8 +253,39 @@
    \end{block}
 
   \end{frame}
+  
+  \begin{frame}
+  \frametitle{La sécurité chez Zigbee ?}
+  \begin{block}{Implémente une variation de AES-CCMP}
+    \begin{itemize}
+	\item Clé de 128 bits
+	\item MIC de longueur variable
+	\item 3 variations : 'link key" "network key", "master key" (pro)
+	\item diffusion des clés : OTA/flashage
+    \end{itemize}
+  Chiffrement symétrique basé sur un chiffrement conforme au RGS
+  \end{block}
+  \end{frame}
 
+  \begin{frame}
+  \frametitle{La sécurité chez Zigbee ?}
+  \begin{block}{Cependant deux failles majeures}
+    \begin{itemize}
+	\item la clé est diffusée en plaintext
+	\item limitations importantes : révocation, durée de vie
+    \end{itemize}
+  \end{block}
+  \begin{block}{Ce qui nous amène à des attaques fonctionnelles concrètes}
+  \begin{itemize}
+      \item Sniffer la  clé
+      \item Attaques de type replay
+      \item Aide des constructeurs : clé dans le firmware, encore plus mauvaises implémentations, etc..
+  \end{itemize}
+  Un framework comparable (dans l'idée) à aircrack existe déjà : killerbee
+  \end{block}
+  \end{frame}
 
+  
   \section{Conclusion}
 
   \begin{frame}
