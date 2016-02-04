@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.1.26)  4 FEB 2016 09:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.1.26)  4 FEB 2016 09:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1352,7 +1352,7 @@ LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <10> not available
 ]
 (./presentation.toc) [6
 
-] <OSI-Zigbee.png, id=206, 568.1225pt x 492.84125pt>
+] <OSI-Zigbee.png, id=214, 568.1225pt x 492.84125pt>
 File: OSI-Zigbee.png Graphic file (type png)
 
 <use OSI-Zigbee.png>
@@ -1361,14 +1361,14 @@ Package pdftex.def Info: OSI-Zigbee.png used on input line 83.
  [7
 
  <./OSI-Zigbee.png>]
-<Range.png, id=236, 985.6825pt x 631.35875pt>
+<Range.png, id=245, 985.6825pt x 631.35875pt>
 File: Range.png Graphic file (type png)
  <use Range.png>
 Package pdftex.def Info: Range.png used on input line 92.
 (pdftex.def)             Requested size: 295.70703pt x 189.40909pt.
  [8
 
- <./Range.png>] <Vitesse-Zigbee.png, id=265, 909.3975pt x 266.9975pt>
+ <./Range.png>] <Vitesse-Zigbee.png, id=273, 909.3975pt x 266.9975pt>
 File: Vitesse-Zigbee.png Graphic file (type png)
 
 <use Vitesse-Zigbee.png>
@@ -1377,7 +1377,7 @@ Package pdftex.def Info: Vitesse-Zigbee.png used on input line 102.
  [9
 
  <./Vitesse-Zigbee.png>]
-<Reseau.png, id=293, 634.37pt x 345.29pt>
+<Reseau.png, id=301, 634.37pt x 345.29pt>
 File: Reseau.png Graphic file (type png)
  <use Reseau.png>
 Package pdftex.def Info: Reseau.png used on input line 116.
@@ -1385,7 +1385,7 @@ Package pdftex.def Info: Reseau.png used on input line 116.
  [10
 
  <./Reseau.png>]
-<Couche-MAC.png, id=321, 504.88625pt x 94.3525pt>
+<Couche-MAC.png, id=329, 504.88625pt x 94.3525pt>
 File: Couche-MAC.png Graphic file (type png)
  <use Couche-MAC.png>
 Package pdftex.def Info: Couche-MAC.png used on input line 130.
@@ -1398,7 +1398,7 @@ Package pdftex.def Info: Couche-MAC.png used on input line 130.
 
 ] [14
 
-] <Supertrame.png, id=429, 554.07pt x 228.855pt>
+] <Supertrame.png, id=437, 554.07pt x 228.855pt>
 File: Supertrame.png Graphic file (type png)
 
 <use Supertrame.png>
@@ -1422,7 +1422,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 221.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 5.39996pt on input line 221.
- <Topologie-Maille.png, id=568, 516.93124pt x 432.61626pt>
+ <Topologie-Maille.png, id=575, 516.93124pt x 432.61626pt>
 File: Topologie-Maille.png Graphic file (type png)
 
 <use Topologie-Maille.png>
@@ -1465,22 +1465,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 328.
  (./presentation.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 328.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 328.
-
-
-Package rerunfilecheck Warning: File `presentation.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `presentation.out':
-(rerunfilecheck)             Before: 99D2875FE6F721F8CABB8E408FA45AEF;104
-(rerunfilecheck)             After:  62EE0D2DD296724D06EE04F327325E97;237.
+Package rerunfilecheck Info: File `presentation.out' has not changed.
+(rerunfilecheck)             Checksum: 62EE0D2DD296724D06EE04F327325E97;237.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 328.
  ) 
 Here is how much of TeX's memory you used:
- 21264 strings out of 494991
- 410596 string characters out of 6180055
+ 21266 strings out of 494991
+ 410620 string characters out of 6180055
  484465 words of memory out of 5000000
- 23905 multiletter control sequences out of 15000+600000
+ 23907 multiletter control sequences out of 15000+600000
  50715 words of font info for 70 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  50i,18n,59p,457b,873s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1490,10 +1483,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic
 /uhvro8a.pfb>
-Output written on presentation.pdf (28 pages, 437295 bytes).
+Output written on presentation.pdf (28 pages, 454443 bytes).
 PDF statistics:
- 844 PDF objects out of 1000 (max. 8388607)
- 776 compressed objects within 8 object streams
+ 850 PDF objects out of 1000 (max. 8388607)
+ 782 compressed objects within 8 object streams
  61 named destinations out of 1000 (max. 500000)
- 123 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 139 words of extra memory for PDF output out of 10000 (max. 10000000)
 
